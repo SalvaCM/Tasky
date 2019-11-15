@@ -2,4 +2,8 @@
     <string name="app_name">Tasky</string>
     <string name="button">Button</string>
     <string name="todo">TODO</string>
+    <string name="eslogan">Organiza tus tareas de forma sencilla</string>
+    <string name="login">Login</string>
+    <string name="usuario">Usuario</string>
+    <string name="userpass">Contraseña</string>
 </resources>
