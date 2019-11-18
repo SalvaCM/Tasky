@@ -10,4 +10,10 @@
     <string name="nuevaTarea">Crear nueva tarea</string>
     <string name="canbiarPass">Cambiar Contraseña</string>
     <string name="acercaDe">acerca de</string>
+    <string name="nombre">Nombre</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="prioridad">Prioridad</string>
+    <string name="crear_tarea">Crear Tarea</string>
+    <string name="fecha">Fecha</string>
+    <string name="coste">Coste</string>
 </resources>
