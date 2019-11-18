@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class TareasActivity extends AppCompatActivity {
+public class MenutareasActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tareas);
+        setContentView(R.layout.activity_menutareas);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

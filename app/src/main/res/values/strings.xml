@@ -16,4 +16,6 @@
     <string name="crear_tarea">Crear Tarea</string>
     <string name="fecha">Fecha</string>
     <string name="coste">Coste</string>
+    <string name="descripcion_tarea">Descripcion Tarea</string>
+    <string name="ver_tareas">Ver Tareas</string>
 </resources>

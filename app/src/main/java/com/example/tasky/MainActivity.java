@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 Toast.makeText(this,"Usuario Correcto",
                         Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MainActivity.this, TareasActivity.class);
+                Intent intent = new Intent(MainActivity.this, MenutareasActivity.class);
                 startActivity(intent);
                 finish();
             }

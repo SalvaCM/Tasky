@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".TareasActivity">
+    tools:context=".VertareaActivity">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -23,39 +23,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView2"
+        <ListView
+            android:id="@+id/listaTareas"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Crear nueva tarea"
-            android:textSize="24sp"
-            android:textStyle="bold|italic" />
-
-        <Button
-            android:id="@+id/crearTarea"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CREAR" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ver todas las tareas"
-            android:textSize="24sp"
-            android:textStyle="bold|italic" />
-
-        <Button
-            android:id="@+id/verTareas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="VER" />
-
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minDate="new Date()" />
-
+            android:layout_height="match_parent" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/ver_tareas"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
