@@ -8,12 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MenutareasActivity extends AppCompatActivity {
+public class AcercadeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menutareas);
+        setContentView(R.layout.activity_acercade);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -38,13 +38,8 @@ public class MenutareasActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public void aCrearTarea(View v) {
-        Intent intent = new Intent( this,CreartareaActivity.class );
-        startActivity(intent);
-        finish();
-    }
-    public void aVerTareas(View v) {
-        Intent intent = new Intent( this,VertareasActivity.class );
+    public void aMenuTareas(View v) {
+        Intent intent = new Intent( this,MenutareasActivity.class );
         startActivity(intent);
         finish();
     }

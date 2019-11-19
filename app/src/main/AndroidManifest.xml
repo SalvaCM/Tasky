@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DescriptareaActivity"></activity>
-        <activity android:name=".VertareaActivity" />
+        <activity android:name=".AcercadeActivity"></activity>
+        <activity android:name=".DescriptareaActivity" />
+        <activity android:name=".VertareasActivity" />
         <activity android:name=".CreartareaActivity" />
         <activity android:name=".MenutareasActivity" />
         <activity android:name=".SplashActivity">

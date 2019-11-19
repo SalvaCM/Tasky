@@ -18,4 +18,9 @@
     <string name="coste">Coste</string>
     <string name="descripcion_tarea">Descripcion Tarea</string>
     <string name="ver_tareas">Ver Tareas</string>
+    <string name="textview">TextView</string>
+    <string name="salvasoft_tasky_app">SalvaSoft @ Tasky! App</string>
+    <string name="version_1_0_25_12_2019">Version 1.0 (25/12/2019)</string>
+    <string name="copyright_2019_2039">CopyRight 2019-2039</string>
+    <string name="email_salvadorcascado_ma_elorrieta_errekamari_com">email : SalvadorCascado.Ma@Elorrieta-Errekamari.com</string>
 </resources>

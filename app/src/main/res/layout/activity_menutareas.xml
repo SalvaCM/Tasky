@@ -35,6 +35,7 @@
             android:id="@+id/crearTarea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="aCrearTarea"
             android:text="CREAR" />
 
         <TextView
@@ -49,13 +50,8 @@
             android:id="@+id/verTareas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="aVerTareas"
             android:text="VER" />
-
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minDate="new Date()" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="64dp"
         android:layout_marginLeft="64dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="256dp"
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
         android:layout_marginBottom="128dp"
@@ -32,6 +32,11 @@
             android:contentDescription="@string/descripcionfoto"
             tools:srcCompat="@drawable/personicon" />
 
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <EditText
             android:id="@+id/usuario"
             android:layout_width="wrap_content"
@@ -42,7 +47,8 @@
             android:ems="10"
             android:hint="@string/usuario"
             android:importantForAutofill="no"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/userpass"
@@ -55,6 +61,7 @@
             android:ems="10"
             android:hint="@string/userpass"
             android:inputType="textPersonName"
+            android:textSize="14sp"
             tools:targetApi="o" />
 
         <Button
@@ -62,15 +69,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="40dp"
             android:onClick="logear"
             android:text="@string/login" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="227dp"
-        android:layout_height="171dp"
+        android:layout_width="187dp"
+        android:layout_height="148dp"
         android:layout_marginStart="92dp"
         android:layout_marginLeft="92dp"
         android:layout_marginTop="16dp"

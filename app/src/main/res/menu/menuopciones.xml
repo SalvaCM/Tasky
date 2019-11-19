@@ -5,16 +5,13 @@
     <item
         android:id="@+id/nuevaTarea"
         android:icon="@android:drawable/ic_input_add"
-        android:title="@string/nuevaTarea"
-        app:showAsAction="always|ifRoom" />
+        android:title="@string/nuevaTarea" />
     <item
         android:id="@+id/cambiarPass"
         android:icon="@drawable/personicon"
-        android:title="@string/canbiarPass"
-        app:showAsAction="ifRoom" />
+        android:title="@string/canbiarPass" />
     <item
         android:id="@+id/acercaDe"
         android:icon="@android:drawable/ic_dialog_info"
-        android:title="@string/acercaDe"
-        app:showAsAction="never" />
+        android:title="@string/acercaDe" />
 </menu>
