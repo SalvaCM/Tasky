@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             else
             {
                 Toast.makeText(this,"Usuario incorrecto",
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_SHORT).show();
             }
         }
     }

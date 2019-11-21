@@ -23,4 +23,10 @@
     <string name="version_1_0_25_12_2019">Version 1.0 (25/12/2019)</string>
     <string name="copyright_2019_2039">CopyRight 2019-2039</string>
     <string name="email_salvadorcascado_ma_elorrieta_errekamari_com">email : SalvadorCascado.Ma@Elorrieta-Errekamari.com</string>
+    <string name="introduceAPW">Contraseña Antigua</string>
+    <string name="introduceNPW">Contraseña Nueva</string>
+    <string name="antigua_contrase_a">Antigua Contraseña</string>
+    <string name="nueva_contrase_a">Nueva Contraseña</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aceptar">Aceptar</string>
 </resources>

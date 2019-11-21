@@ -9,14 +9,14 @@ import android.view.MenuItem;
 import android.widget.ListView;
 
 public class DescriptareaActivity extends AppCompatActivity {
-
+    public String dato;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_descriptarea);
         ListView lv1 = (ListView) findViewById(R.id.listaDescripcion);
         Bundle bundle = getIntent().getExtras();
-        String dato=bundle.getString("tarea");
+        dato=bundle.getString("tareaSeleccionada");
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menuopciones, menu);

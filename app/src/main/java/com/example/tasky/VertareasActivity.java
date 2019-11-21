@@ -24,7 +24,8 @@ public class VertareasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        cargarTareas(view); // intentado cargar la tarea
+        Bundle bundle = getIntent().getExtras();
+        tareas=bundle.getStringArrayList("tareas");
         setContentView(R.layout.activity_vertarea);
         lv1 =(ListView)findViewById(R.id.listaTareas);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, tareas);
@@ -53,7 +54,7 @@ public class VertareasActivity extends AppCompatActivity {
             finish();
         }
         if (id==R.id.cambiarPass) {
-
+            
         }
         if (id==R.id.acercaDe) {
             Intent intent = new Intent( this,AcercadeActivity.class );
@@ -64,24 +65,13 @@ public class VertareasActivity extends AppCompatActivity {
     }
     public void ver(View view) {
          Intent intent=new Intent(this ,DescriptareaActivity.class);
-         intent.putExtra("tareas", tareaSeleccionada);
+         intent.putExtra("tareaSeleccionada",tareaSeleccionada );
          startActivity(intent);
-        //finish();
+         finish();
     }
 
-    public void cargarTareas(View v) {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                "Tasky.sqlite", null, 1);
-        SQLiteDatabase bd = admin.getWritableDatabase();
-        Cursor fila = bd.rawQuery("select nombre from taskytareas", null);
-        if (fila.moveToFirst()) {
-            do {
-                tareas.add(fila.getString(1));
 
-            } while(c.moveToNext());
-        }
-        bd.close();
-    }
+
 
 
 }
