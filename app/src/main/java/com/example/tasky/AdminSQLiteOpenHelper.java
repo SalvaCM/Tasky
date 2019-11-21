@@ -19,7 +19,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table taskytareas(codigo int primary key,nombre text,descripcion text,prioridad text,fecha date,precio real)");
+        sqLiteDatabase.execSQL("create table taskytareas(codigo int primary key AUTOINCREMENT,nombre text,descripcion text,prioridad text,fecha date,precio real)");
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {

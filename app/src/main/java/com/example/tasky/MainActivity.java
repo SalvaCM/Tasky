@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             if(nombre.equals(nombreenBD) && pass.equals(passUserBD))
             {
                 Toast.makeText(this,"Usuario Correcto",
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, MenutareasActivity.class);
                 startActivity(intent);
                 finish();

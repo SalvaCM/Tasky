@@ -3,6 +3,8 @@ package com.example.tasky;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,18 +14,20 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class VertareasActivity extends AppCompatActivity {
-    private String[] tareas={"comprar el pan","fregar los platos","comprar un portatil"};
     private TextView tv1;
     private ListView lv1;
     private String tareaSeleccionada;
+    public ArrayList<String> tareas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        cargarTareas(view); // intentado cargar la tarea
         setContentView(R.layout.activity_vertarea);
         lv1 =(ListView)findViewById(R.id.listaTareas);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>
-                (this,android.R.layout.simple_list_item_1, tareas);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, tareas);
         lv1.setAdapter(adapter);
         lv1.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
@@ -44,12 +48,12 @@ public class VertareasActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id==R.id.nuevaTarea) {
-
-        }
-        if (id==R.id.cambiarPass) {
             Intent intent = new Intent( this,CreartareaActivity.class );
             startActivity(intent);
             finish();
+        }
+        if (id==R.id.cambiarPass) {
+
         }
         if (id==R.id.acercaDe) {
             Intent intent = new Intent( this,AcercadeActivity.class );
@@ -64,5 +68,20 @@ public class VertareasActivity extends AppCompatActivity {
          startActivity(intent);
         //finish();
     }
+
+    public void cargarTareas(View v) {
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
+                "Tasky.sqlite", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+        Cursor fila = bd.rawQuery("select nombre from taskytareas", null);
+        if (fila.moveToFirst()) {
+            do {
+                tareas.add(fila.getString(1));
+
+            } while(c.moveToNext());
+        }
+        bd.close();
+    }
+
 
 }
