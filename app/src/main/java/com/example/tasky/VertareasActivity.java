@@ -23,9 +23,16 @@ public class VertareasActivity extends AppCompatActivity {
     public ArrayList<String> tareas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         Bundle bundle = getIntent().getExtras();
         tareas=bundle.getStringArrayList("tareas");
+
+        for (int i =0;i<tareas.size();i++)
+        {
+            System.out.println("Tareas");
+            System.out.println(tareas.get(i).toString());
+        }
         setContentView(R.layout.activity_vertarea);
         lv1 =(ListView)findViewById(R.id.listaTareas);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, tareas);

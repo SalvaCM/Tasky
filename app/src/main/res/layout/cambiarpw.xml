@@ -7,29 +7,27 @@
     <TextView
         android:id="@+id/txtOldpw"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/antigua_contrase_a" />
+        android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/etOldpw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/nueva_contrase_a"
-        android:inputType="textPassword" />
-
-    <TextView
-        android:id="@+id/etNewpw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/nueva_contrase_a" />
-
-    <EditText
-        android:id="@+id/etNuevapw"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/antigua_contrase_a"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/tvNewpw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etNuevapw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/nueva_contrase_a"
         android:importantForAutofill="no"
         android:inputType="textPassword" />
 

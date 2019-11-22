@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -62,15 +63,20 @@ public class MenutareasActivity extends AppCompatActivity {
     }
     public void cargarTareas(View v) {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                "Tasky.sqlite", null, 1);
+                "taskybd", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
-        Cursor fila = bd.rawQuery("select nombre from taskytareas", null);
+        tareas = new ArrayList<String>();
+        Cursor fila = bd.rawQuery("SELECT nombre from taskytareas", null);
         if (fila.moveToFirst()) {
             do {
-                tareas.add(fila.getString(1));
-
+                String tareaCargada = fila.getString(0);
+                tareas.add(tareaCargada);
             } while(fila.moveToNext());
         }
+        //Log.println(Log.INFO,"Info", tareas.get(0).toString());
+
+
+        fila.close();
         bd.close();
     }
     public void abreDialogo(){
@@ -81,44 +87,58 @@ public class MenutareasActivity extends AppCompatActivity {
         Button cambiar = mView.findViewById(R.id.btnAceptarPW);
         Button cancelar = mView.findViewById(R.id.btnCancelarPW);
 
-        final EditText nuevaPW = mView.findViewById(R.id.etNewpw);
+        final EditText nuevaPW = mView.findViewById(R.id.etNuevapw);
         final EditText viejaPW = mView.findViewById(R.id.etOldpw);
-        cambiar.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                SharedPreferences prefe=getSharedPreferences("user",
-                        Context.MODE_PRIVATE);
-                String passUserBD=prefe.getString("UserPass","");
-                if (viejaPW.getText().toString()==passUserBD)
-                {
-                    SharedPreferences.Editor editor=prefe.edit();
-                    editor.putString("UserPass", nuevaPW.getText().toString());
-                    editor.commit();
-                    //finish();
-                    Toast.makeText(MenutareasActivity.this,"Contraseña Cambiada",
-                            Toast.LENGTH_SHORT).show();
-
-                }
-                else
-                {
-                    Toast.makeText(MenutareasActivity.this,"Contraseña Incorrecta",
-                            Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        cambiar.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
         mbuilder.setView(mView);
-        AlertDialog dialog = mbuilder.create();
+        final AlertDialog dialog = mbuilder.create();
+        cambiar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                if (cambiarPW(v, nuevaPW,viejaPW))
+                {
+                    dialog.dismiss();
+                }
+
+            }
+        });
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+
         dialog.show();
 
+    }
+
+    private boolean cambiarPW(View mView,EditText nuevaPW,EditText viejaPW) {
+        String vieja = viejaPW.getText().toString();
+        String nueva = nuevaPW.getText().toString();
+        SharedPreferences prefe=getSharedPreferences("user",
+                Context.MODE_PRIVATE);
+        String passUserBD=prefe.getString("UserPass","");
+        Log.println(Log.INFO,"Info", "passVieja"+vieja);
+        Log.println(Log.INFO,"Info", "passNueva"+nueva);
+        Log.println(Log.INFO,"Info", "passUser"+passUserBD);
+        if (vieja.equals(passUserBD))
+        {
+            SharedPreferences.Editor editor=prefe.edit();
+            editor.putString("UserPass", nueva);
+            editor.commit();
+            Toast.makeText(this,"Contraseña Cambiada",
+                    Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        else
+        {
+            Toast.makeText(this,"Contraseña Incorrecta",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
 }

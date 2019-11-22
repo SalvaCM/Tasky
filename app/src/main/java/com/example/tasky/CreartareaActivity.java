@@ -63,9 +63,10 @@ public class CreartareaActivity extends AppCompatActivity {
             registro.put("descripcion",descripcion);
             registro.put("prioridad",prioridad);
             registro.put("fecha",fecha);
-            registro.put("precio",nombre);
+            registro.put("precio",precio);
             db.insert("taskytareas", null, registro);
             db.close();
+            Toast.makeText(this,"Tarea Creada",Toast.LENGTH_SHORT).show();
             etNombre.setText("");
             etDescripcion.setText("");
             etPrioridad.setText("");
@@ -73,7 +74,7 @@ public class CreartareaActivity extends AppCompatActivity {
             etCoste.setText("");
         }
         else
-            Toast.makeText(this,"Fallo al obtener la DB",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Fallo al obtener la DB",Toast.LENGTH_SHORT).show();
         }
 
     }
