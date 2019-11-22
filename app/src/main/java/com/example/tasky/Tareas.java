@@ -1,14 +1,16 @@
 package com.example.tasky;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Tareas {
-    public int codigo;
-    public String nombre;
-    public String descripcion;
-    public String prioridad;
-    public Date fecha;
-    public double precio;
+public class Tareas implements Serializable {
+    private int codigo;
+    private String nombre;
+    private String descripcion;
+    private String prioridad;
+    private String fecha;
+    private double precio;
+    private int realizada;
 
     public Tareas() {
     }
@@ -45,11 +47,11 @@ public class Tareas {
         this.prioridad = prioridad;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public String setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -59,5 +61,12 @@ public class Tareas {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+    public int getRealizada() {
+        return realizada;
+    }
+
+    public int setRealizada(int codigo) {
+        this.realizada = realizada;
     }
 }

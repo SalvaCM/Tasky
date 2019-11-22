@@ -18,9 +18,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MenutareasActivity extends AppCompatActivity {
-    public ArrayList<String> tareas;
+    public ArrayList<Tareas> tareas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,12 +66,24 @@ public class MenutareasActivity extends AppCompatActivity {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
                 "taskybd", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
-        tareas = new ArrayList<String>();
-        Cursor fila = bd.rawQuery("SELECT nombre from taskytareas", null);
+        tareas = new ArrayList<Tareas>();
+        Cursor fila = bd.rawQuery("SELECT * from taskytareas", null);
         if (fila.moveToFirst()) {
             do {
-                String tareaCargada = fila.getString(0);
-                tareas.add(tareaCargada);
+                Tareas tarea = new Tareas();
+                tarea.setCodigo(fila.getInt(0));
+                tarea.setNombre(fila.getString(1));
+                tarea.setDescripcion(fila.getString(2));
+                tarea.setPrioridad(fila.getString(3));
+                tarea.setFecha(fila.getString(4));
+                String descripcion = fila.getString(2);
+                String prioridad = fila.getString(3);
+                String fecha = fila.getString(4);
+                double coste = fila.getDouble(5);
+                tareas.add(tarea);
+                
+
+
             } while(fila.moveToNext());
         }
         //Log.println(Log.INFO,"Info", tareas.get(0).toString());
@@ -121,9 +134,9 @@ public class MenutareasActivity extends AppCompatActivity {
         SharedPreferences prefe=getSharedPreferences("user",
                 Context.MODE_PRIVATE);
         String passUserBD=prefe.getString("UserPass","");
-        Log.println(Log.INFO,"Info", "passVieja"+vieja);
-        Log.println(Log.INFO,"Info", "passNueva"+nueva);
-        Log.println(Log.INFO,"Info", "passUser"+passUserBD);
+        //Log.println(Log.INFO,"Info", "passVieja"+vieja);
+        // Log.println(Log.INFO,"Info", "passNueva"+nueva);
+        // Log.println(Log.INFO,"Info", "passUser"+passUserBD);
         if (vieja.equals(passUserBD))
         {
             SharedPreferences.Editor editor=prefe.edit();
