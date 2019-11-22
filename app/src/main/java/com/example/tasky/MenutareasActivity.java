@@ -76,19 +76,15 @@ public class MenutareasActivity extends AppCompatActivity {
                 tarea.setDescripcion(fila.getString(2));
                 tarea.setPrioridad(fila.getString(3));
                 tarea.setFecha(fila.getString(4));
-                String descripcion = fila.getString(2);
-                String prioridad = fila.getString(3);
-                String fecha = fila.getString(4);
-                double coste = fila.getDouble(5);
+                tarea.setPrecio(fila.getDouble(5));
+                tarea.setRealizada(fila.getInt(6));
                 tareas.add(tarea);
-                
+
 
 
             } while(fila.moveToNext());
         }
         //Log.println(Log.INFO,"Info", tareas.get(0).toString());
-
-
         fila.close();
         bd.close();
     }

@@ -20,13 +20,14 @@ public class VertareasActivity extends AppCompatActivity {
     private TextView tv1;
     private ListView lv1;
     private String tareaSeleccionada;
-    public ArrayList<String> tareas;
+    public ArrayList<Tareas> tareas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        Bundle bundle = getIntent().getExtras();
-        tareas=bundle.getStringArrayList("tareas");
+        Intent intent = getIntent();
+        Object extra = intent.getSerializableExtra("tareas");
+        tareas=(Tareas) extra;
 
         for (int i =0;i<tareas.size();i++)
         {

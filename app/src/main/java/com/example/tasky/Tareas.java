@@ -1,7 +1,6 @@
 package com.example.tasky;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Tareas implements Serializable {
     private int codigo;
@@ -51,7 +50,7 @@ public class Tareas implements Serializable {
         return fecha;
     }
 
-    public String setFecha(String fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -66,7 +65,7 @@ public class Tareas implements Serializable {
         return realizada;
     }
 
-    public int setRealizada(int codigo) {
+    public void setRealizada(int codigo) {
         this.realizada = realizada;
     }
 }
