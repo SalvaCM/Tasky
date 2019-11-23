@@ -44,7 +44,7 @@ public class VertareasActivity extends AppCompatActivity {
                                     int i, long l) {
 
                 tareaSeleccionada = lv1.getItemAtPosition(i).toString();
-                ver(view);
+                verTareaSeleccionada(view,tareaSeleccionada);
             }
         });
     }
@@ -70,7 +70,7 @@ public class VertareasActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public void ver(View view) {
+    public void verTareaSeleccionada(View view,String tareaSeleccionada) {
          Intent intent=new Intent(this ,DescriptareaActivity.class);
          intent.putExtra("tareaSeleccionada",tareaSeleccionada );
          startActivity(intent);

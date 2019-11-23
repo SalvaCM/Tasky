@@ -6,17 +6,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 public class DescriptareaActivity extends AppCompatActivity {
-    public String dato;
+    public Tareas tareaSeleccionada ;
+    public EditText etNombre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        tareaSeleccionada = new Tareas();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_descriptarea);
-        ListView lv1 = (ListView) findViewById(R.id.listaDescripcion);
         Bundle bundle = getIntent().getExtras();
-        dato=bundle.getString("tareaSeleccionada");
+        tareaSeleccionada.setNombre(bundle.getString("tareaSeleccionada"));
+        etNombre = findViewById(R.id.nombre2);
+        etNombre.setText(tareaSeleccionada.nombre);
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menuopciones, menu);
