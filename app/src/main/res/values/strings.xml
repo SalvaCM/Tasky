@@ -29,4 +29,7 @@
     <string name="nueva_contrase_a">Nueva Contraseña</string>
     <string name="cancelar">Cancelar</string>
     <string name="aceptar">Aceptar</string>
+    <string name="borrar">borrar</string>
+    <string name="dd_mm_yyyy">dd/mm/yyyy</string>
+    <string name="volver">Volver</string>
 </resources>

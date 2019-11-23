@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class VertareasActivity extends AppCompatActivity {
     private TextView tv1;
     private ListView lv1;
-    private String tareaSeleccionada;
+    private Tareas tareaSeleccionada;
     public ArrayList<Tareas> tareas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class VertareasActivity extends AppCompatActivity {
             public void onItemClick(AdapterView adapterView, View view,
                                     int i, long l) {
 
-                tareaSeleccionada = lv1.getItemAtPosition(i).toString();
+                tareaSeleccionada = (Tareas)lv1.getItemAtPosition(i);
                 ver(view);
             }
         });
