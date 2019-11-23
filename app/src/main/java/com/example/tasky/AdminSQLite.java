@@ -6,15 +6,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
+public class AdminSQLite extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "taskybd";
     private static final int DB_VERSION = 1;
 
-    public AdminSQLiteOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public AdminSQLite(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
-    public AdminSQLiteOpenHelper(Context context) {
+    public AdminSQLite(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
     @Override

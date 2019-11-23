@@ -12,8 +12,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.sql.Date;
-
 public class CreartareaActivity extends AppCompatActivity {
     private EditText etNombre,etDescripcion,etPrioridad,etFecha,etCoste;
     @Override
@@ -50,7 +48,7 @@ public class CreartareaActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void nuevaTarea(View view){
-        AdminSQLiteOpenHelper dbHelper = new AdminSQLiteOpenHelper(this);
+        AdminSQLite dbHelper = new AdminSQLite(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         if (db != null) {
             String nombre = etNombre.getText().toString();
@@ -58,12 +56,14 @@ public class CreartareaActivity extends AppCompatActivity {
             String prioridad = etPrioridad.getText().toString();
             String fecha = etFecha.getText().toString();
             Double precio = Double.parseDouble(etCoste.getText().toString());
+            int realizada = 0;
             ContentValues registro = new ContentValues();
             registro.put("nombre",nombre);
             registro.put("descripcion",descripcion);
             registro.put("prioridad",prioridad);
             registro.put("fecha",fecha);
             registro.put("precio",precio);
+            registro.put("realizada",realizada);
             db.insert("taskytareas", null, registro);
             db.close();
             Toast.makeText(this,"Tarea Creada",Toast.LENGTH_SHORT).show();
@@ -72,6 +72,7 @@ public class CreartareaActivity extends AppCompatActivity {
             etPrioridad.setText("");
             etFecha.setText("");
             etCoste.setText("");
+
         }
         else
             Toast.makeText(this,"Fallo al obtener la DB",Toast.LENGTH_SHORT).show();

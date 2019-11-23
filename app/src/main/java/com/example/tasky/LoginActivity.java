@@ -10,12 +10,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private EditText et1,et2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         et1=(EditText)findViewById(R.id.usuario);
         et2=(EditText)findViewById(R.id.userpass);
         SharedPreferences preferencias=getSharedPreferences("user",
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 Toast.makeText(this,"Usuario Correcto",
                         Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, MenutareasActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                 startActivity(intent);
                 finish();
             }

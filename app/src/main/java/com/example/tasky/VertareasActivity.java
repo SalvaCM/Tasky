@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,17 +27,17 @@ public class VertareasActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        Object extra = intent.getSerializableExtra("tareas");
-        tareas=(Tareas) extra;
+        tareas= new ArrayList<Tareas>();
+        tareas = (ArrayList<Tareas>)intent.getSerializableExtra("tareas");
+
 
         for (int i =0;i<tareas.size();i++)
         {
-            System.out.println("Tareas");
-            System.out.println(tareas.get(i).toString());
+            Log.println(Log.INFO, "Info", tareas.get(i).toString());
         }
         setContentView(R.layout.activity_vertarea);
         lv1 =(ListView)findViewById(R.id.listaTareas);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, tareas);
+        ArrayAdapter<Tareas> adapter = new ArrayAdapter<Tareas>(this,android.R.layout.simple_list_item_1, tareas);
         lv1.setAdapter(adapter);
         lv1.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {

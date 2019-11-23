@@ -11,6 +11,14 @@ public class Tareas implements Serializable {
     private double precio;
     private int realizada;
 
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer();
+        sb.append("").append(nombre).append('\'');
+        sb.append("").append(fecha).append('\'');
+        return sb.toString();
+    }
+
     public Tareas() {
     }
 

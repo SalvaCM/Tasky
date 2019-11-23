@@ -18,14 +18,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Date;
 
-public class MenutareasActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity {
     public ArrayList<Tareas> tareas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menutareas);
+        setContentView(R.layout.activity_menu);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,7 +62,7 @@ public class MenutareasActivity extends AppCompatActivity {
         finish();
     }
     public void cargarTareas(View v) {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
+        AdminSQLite admin = new AdminSQLite(this,
                 "taskybd", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
         tareas = new ArrayList<Tareas>();
@@ -79,12 +78,11 @@ public class MenutareasActivity extends AppCompatActivity {
                 tarea.setPrecio(fila.getDouble(5));
                 tarea.setRealizada(fila.getInt(6));
                 tareas.add(tarea);
-
-
-
             } while(fila.moveToNext());
         }
-        //Log.println(Log.INFO,"Info", tareas.get(0).toString());
+        for (int i=0;i<tareas.size();i++) {
+            Log.println(Log.INFO, "Info", tareas.get(i).toString());
+        }
         fila.close();
         bd.close();
     }

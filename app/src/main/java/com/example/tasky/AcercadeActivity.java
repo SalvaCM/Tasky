@@ -39,7 +39,7 @@ public class AcercadeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void aMenuTareas(View v) {
-        Intent intent = new Intent( this,MenutareasActivity.class );
+        Intent intent = new Intent( this, MenuActivity.class );
         startActivity(intent);
         finish();
     }
