@@ -27,9 +27,12 @@
     <string name="introduceNPW">Contraseña Nueva</string>
     <string name="antigua_contrase_a">Antigua Contraseña</string>
     <string name="nueva_contrase_a">Nueva Contraseña</string>
-    <string name="cancelar">Cancelar</string>
     <string name="aceptar">Aceptar</string>
     <string name="borrar">borrar</string>
     <string name="dd_mm_yyyy">dd/mm/yyyy</string>
     <string name="volver">Volver</string>
+    <string name="modificar">Modificar</string>
+    <string name="guardar">Guardar</string>
+    <string name="realizada">Realizada</string>
+    <string name="cancelar">Cancelar</string>
 </resources>
