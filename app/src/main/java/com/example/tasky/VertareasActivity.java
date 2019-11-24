@@ -79,7 +79,11 @@ public class VertareasActivity extends AppCompatActivity {
          finish();
     }
 
-
+    public void aMenuTareas(View v) {
+        Intent intent = new Intent( this, MenuActivity.class );
+        startActivity(intent);
+        finish();
+    }
 
 
 

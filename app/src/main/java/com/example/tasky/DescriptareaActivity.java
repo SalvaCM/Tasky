@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,7 +32,7 @@ public class DescriptareaActivity extends AppCompatActivity {
     public Button btnBorrar;
     public Button btnModificar;
     public Button btnCancelar;
-
+    public ArrayList<Tareas> tareas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         tareaSeleccionada = new Tareas();
@@ -94,8 +96,7 @@ public class DescriptareaActivity extends AppCompatActivity {
                 int borrado = db.delete("taskytareas", "codigo=" + cod, null);
                 db.close();
                 if (borrado == 1) {
-                    Toast.makeText(this, "Tarea Borrada",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Tarea Borrada",Toast.LENGTH_SHORT).show();
                     etNombre.setText("");
                     etDescripcion.setText("");
                     etPrioridad.setText("");
@@ -107,8 +108,7 @@ public class DescriptareaActivity extends AppCompatActivity {
                     finish();
                 }
                 else {
-                    Toast.makeText(this, "Error al borrar",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Error al borrar",Toast.LENGTH_SHORT).show();
                 }
 
         } else {
@@ -128,6 +128,7 @@ public class DescriptareaActivity extends AppCompatActivity {
         etFecha.setEnabled(true);
         etCoste.setEnabled(true);
         cboxRealizada.setEnabled(true);
+        Toast.makeText(this, "Pulse el campo a modificar",Toast.LENGTH_SHORT).show();
 
     }
     public void CancelarMod(View view) {
@@ -194,13 +195,39 @@ public class DescriptareaActivity extends AppCompatActivity {
             int mod = db.update("taskytareas",registro, "codigo=" + cod, null);
             db.close();
             if (mod == 1)
-                Toast.makeText(this, "Tarea modificada",
-                        Toast.LENGTH_SHORT)
+                Toast.makeText(this, "Tarea modificada",Toast.LENGTH_SHORT)
                         .show();
             else
-                Toast.makeText(this, "No se pudo modificar la tarea",
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "No se pudo modificar la tarea",Toast.LENGTH_SHORT).show();
         }
 
+    }
+    public void aVerTareas(View v) {
+        cargarTareas(v);
+        Intent intent = new Intent( this,VertareasActivity.class );
+        intent.putExtra("tareas",tareas);
+        startActivity(intent);
+        finish();
+    }
+    public void cargarTareas(View v) {
+        AdminSQLite admin = new AdminSQLite(this);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+        tareas = new ArrayList<Tareas>();
+        Cursor fila = bd.rawQuery("SELECT * from taskytareas", null);
+        if (fila.moveToFirst()) {
+            do {
+                Tareas tarea = new Tareas();
+                tarea.setCodigo(fila.getInt(0));
+                tarea.setNombre(fila.getString(1));
+                tarea.setDescripcion(fila.getString(2));
+                tarea.setPrioridad(fila.getString(3));
+                tarea.setFecha(fila.getString(4));
+                tarea.setPrecio(fila.getDouble(5));
+                tarea.setRealizada(fila.getInt(6));
+                tareas.add(tarea);
+            } while(fila.moveToNext());
+        }
+        fila.close();
+        bd.close();
     }
 }

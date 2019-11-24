@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Main" >
+    <item android:id="@+id/aBaricon"
+        android:icon="@drawable/ticonbig"
+        android:title="@string/app_name"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/nuevaTarea"
-        android:icon="@android:drawable/ic_input_add"
-        android:title="@string/nuevaTarea" />
+        android:icon="@mipmap/ic_launcher_foreground"
+        android:title="@string/nuevaTarea"
+        app:showAsAction="never"/>
     <item
         android:id="@+id/cambiarPass"
         android:icon="@drawable/personicon"
-        android:title="@string/canbiarPass" />
+        android:title="@string/canbiarPass"
+        app:showAsAction="never"/>
     <item
         android:id="@+id/acercaDe"
         android:icon="@android:drawable/ic_dialog_info"
-        android:title="@string/acercaDe" />
+        android:background="@color/colorPrimaryDark"
+        android:title="@string/acercaDe"
+        app:showAsAction="never"/>
 </menu>

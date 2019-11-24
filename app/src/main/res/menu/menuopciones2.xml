@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/verTareas"
+        android:icon="@mipmap/ic_launcher_foreground"
+        android:title="@string/ver_tareas" />
+    <item
+        android:id="@+id/cambiarPass"
+        android:icon="@drawable/personicon"
+        android:title="@string/canbiarPass" />
+    <item
+        android:id="@+id/acercaDe"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:background="@color/colorPrimaryDark"
+        android:title="@string/acercaDe" />
+
+</menu>

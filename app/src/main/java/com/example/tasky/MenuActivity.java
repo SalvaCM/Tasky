@@ -127,9 +127,6 @@ public class MenuActivity extends AppCompatActivity {
         SharedPreferences prefe=getSharedPreferences("user",
                 Context.MODE_PRIVATE);
         String passUserBD=prefe.getString("UserPass","");
-        //Log.println(Log.INFO,"Info", "passVieja"+vieja);
-        // Log.println(Log.INFO,"Info", "passNueva"+nueva);
-        // Log.println(Log.INFO,"Info", "passUser"+passUserBD);
         if (vieja.equals(passUserBD))
         {
             SharedPreferences.Editor editor=prefe.edit();

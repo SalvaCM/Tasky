@@ -26,29 +26,7 @@ public class CreartareaActivity extends AppCompatActivity {
         etFecha=(EditText)findViewById(R.id.fecha);
         etCoste=(EditText)findViewById(R.id.coste);
     }
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menuopciones, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id==R.id.nuevaTarea) {
-            Intent intent = new Intent( this,CreartareaActivity.class );
-            startActivity(intent);
-            finish();
-        }
-        if (id==R.id.cambiarPass) {
-            //TODO
-        }
-        if (id==R.id.acercaDe) {
-            Intent intent = new Intent( this,AcercadeActivity.class );
-            startActivity(intent);
-            finish();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-    public void nuevaTarea(View view){
+    public void nuevaTarea(View view) {
         AdminSQLite dbHelper = new AdminSQLite(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         if (db != null) {
@@ -59,21 +37,25 @@ public class CreartareaActivity extends AppCompatActivity {
             Double precio = Double.parseDouble(etCoste.getText().toString());
             int realizada = 0;
 
-            String query = "INSERT INTO taskytareas (nombre,descripcion,prioridad,fecha,precio,realizada)VALUES ('"+nombre+"', '" + descripcion + "','" + prioridad + "','" +fecha+"','" + precio + "','" + realizada + "')";
+            String query = "INSERT INTO taskytareas (nombre,descripcion,prioridad,fecha,precio,realizada)VALUES ('" + nombre + "', '" + descripcion + "','" + prioridad + "','" + fecha + "','" + precio + "','" + realizada + "')";
             db.execSQL(query);
             db.close();
-            Toast.makeText(this,"Tarea Creada",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Tarea Creada", Toast.LENGTH_SHORT).show();
             etNombre.setText("");
             etDescripcion.setText("");
             etPrioridad.setText("");
             etFecha.setText("");
             etCoste.setText("");
 
+        } else {
+            Toast.makeText(this, "Fallo al obtener la DB", Toast.LENGTH_SHORT).show();
         }
-        else
-            Toast.makeText(this,"Fallo al obtener la DB",Toast.LENGTH_SHORT).show();
-        }
-
+    }
+    public void aMenuTareas(View v) {
+        Intent intent = new Intent( this, MenuActivity.class );
+        startActivity(intent);
+        finish();
+    }
     }
 
 

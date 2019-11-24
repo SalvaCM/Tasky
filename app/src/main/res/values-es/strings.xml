@@ -1,2 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Tasky</string>
+    <string name="eslogan">Organiza tus tareas de forma sencilla</string>
+    <string name="login">Login</string>
+    <string name="usuario">Usuario</string>
+    <string name="userpass">Contraseña</string>
+    <string name="descripcionfoto">Login</string>
+    <string name="nuevaTarea">Crear nueva tarea</string>
+    <string name="canbiarPass">Cambiar Contraseña</string>
+    <string name="acercaDe">acerca de</string>
+    <string name="nombre">Nombre</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="prioridad">Prioridad</string>
+    <string name="crear_tarea">Crear Tarea</string>
+    <string name="fecha">Fecha</string>
+    <string name="coste">Coste</string>
+    <string name="descripcion_tarea">Descripcion Tarea</string>
+    <string name="ver_tareas">Ver Tareas</string>
+    <string name="salvasoft_tasky_app">SalvaSoft @ Tasky! App</string>
+    <string name="version_1_0_25_12_2019">Version 1.0 (25/12/2019)</string>
+    <string name="copyright_2019_2039">CopyRight 2019-2039</string>
+    <string name="email_salvadorcascado_ma_elorrieta_errekamari_com">email : Salvacm11@gmail.com</string>
+    <string name="antigua_contrase_a">Antigua Contraseña</string>
+    <string name="nueva_contrase_a">Nueva Contraseña</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="borrar">borrar</string>
+    <string name="dd_mm_yyyy">dd/mm/aaaa</string>
+    <string name="volver">Volver</string>
+    <string name="modificar">Modificar</string>
+    <string name="guardar">Guardar</string>
+    <string name="realizada">Realizada</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="crear">CREAR</string>
+    <string name="ver">VER</string>
+    <string name="crear_nueva_tarea">Crear nueva tarea</string>
+    <string name="ver_todas_las_tareas">Ver todas las tareas</string>
+</resources>
