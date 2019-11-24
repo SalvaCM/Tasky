@@ -10,18 +10,15 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/nuevaTarea"
-        android:icon="@mipmap/ic_launcher_foreground"
         android:title="@string/nuevaTarea"
         app:showAsAction="never"/>
     <item
         android:id="@+id/cambiarPass"
-        android:icon="@drawable/personicon"
         android:title="@string/canbiarPass"
         app:showAsAction="never"/>
     <item
         android:id="@+id/acercaDe"
-        android:icon="@android:drawable/ic_dialog_info"
-        android:background="@color/colorPrimaryDark"
         android:title="@string/acercaDe"
-        app:showAsAction="never"/>
+        app:showAsAction="never"
+        />
 </menu>

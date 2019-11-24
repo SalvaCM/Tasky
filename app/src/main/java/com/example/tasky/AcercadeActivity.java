@@ -17,7 +17,7 @@ public class AcercadeActivity extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menuopciones, menu);
+        getMenuInflater().inflate(R.menu.actionmenuop, menu);
         return true;
     }
     @Override

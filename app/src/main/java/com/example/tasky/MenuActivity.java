@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,7 +29,7 @@ public class MenuActivity extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menuopciones, menu);
+        getMenuInflater().inflate(R.menu.actionmenuop, menu);
         return true;
     }
     @Override
@@ -49,6 +50,7 @@ public class MenuActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     public void aCrearTarea(View v) {
         Intent intent = new Intent( this,CreartareaActivity.class );
         startActivity(intent);
