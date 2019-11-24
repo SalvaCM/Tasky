@@ -35,4 +35,8 @@
     <string name="guardar">Guardar</string>
     <string name="realizada">Realizada</string>
     <string name="cancelar">Cancelar</string>
+    <string name="crear">CREAR</string>
+    <string name="ver">VER</string>
+    <string name="crear_nueva_tarea">Crear nueva tarea</string>
+    <string name="ver_todas_las_tareas">Ver todas las tareas</string>
 </resources>

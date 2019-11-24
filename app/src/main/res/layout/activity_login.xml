@@ -27,7 +27,9 @@
             android:id="@+id/usuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:ems="10"
             android:hint="@string/usuario"
@@ -39,6 +41,9 @@
             android:id="@+id/userpass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:autofillHints=""
             android:ems="10"
@@ -52,6 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|clip_vertical"
+            android:layout_marginBottom="10dp"
             android:onClick="logear"
             android:text="@string/login" />
     </LinearLayout>

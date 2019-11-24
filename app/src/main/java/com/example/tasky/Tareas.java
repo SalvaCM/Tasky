@@ -14,8 +14,15 @@ public class Tareas implements Serializable {
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer();
-        sb.append("").append(nombre).append('\'');
-        sb.append("").append(fecha).append('\'');
+        sb.append("-").append(nombre).append('\n');
+        sb.append("\t").append(fecha).append('\n');
+        if (this.realizada==0)
+        {
+            sb.append("\t").append("No Realizada");
+        }
+        else {
+            sb.append("\t").append("Realizada");
+        }
         return sb.toString();
     }
 
@@ -69,11 +76,12 @@ public class Tareas implements Serializable {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+
     public int getRealizada() {
         return realizada;
     }
 
-    public void setRealizada(int codigo) {
+    public void setRealizada(int realizada) {
         this.realizada = realizada;
     }
 }

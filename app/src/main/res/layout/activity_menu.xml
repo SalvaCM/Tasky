@@ -7,51 +7,84 @@
     android:background="@color/colorPrimaryDark"
     tools:context=".MenuActivity">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="178dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginRight="92dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ticonbig" />
+
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginLeft="64dp"
-        android:layout_marginTop="128dp"
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
-        android:layout_marginBottom="128dp"
         android:background="@android:color/background_light"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/imageView5">
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Crear nueva tarea"
-            android:textSize="24sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/background_light"
+            android:text="@string/crear_nueva_tarea"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
             android:textStyle="bold|italic" />
 
         <Button
             android:id="@+id/crearTarea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
             android:onClick="aCrearTarea"
-            android:text="CREAR" />
+            android:text="@string/crear" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ver todas las tareas"
-            android:textSize="24sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/background_light"
+            android:text="@string/ver_todas_las_tareas"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
             android:textStyle="bold|italic" />
 
         <Button
             android:id="@+id/verTareas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
             android:onClick="aVerTareas"
-            android:text="VER" />
+            android:text="@string/ver" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,12 +7,27 @@
     android:background="@color/colorPrimaryDark"
     tools:context=".AcercadeActivity">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="178dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginRight="92dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ticonbig" />
+
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
+        android:layout_width="293dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
         android:layout_marginTop="32dp"
         android:background="@android:color/background_light"
         android:orientation="vertical"
@@ -23,39 +38,47 @@
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/salvasoft_tasky_app" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/salvasoft_tasky_app"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/copyright_2019_2039" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/copyright_2019_2039"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/email_salvadorcascado_ma_elorrieta_errekamari_com" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/email_salvadorcascado_ma_elorrieta_errekamari_com"
+            android:textSize="12sp" />
 
         <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
             android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/version_1_0_25_12_2019" />
+            android:text="@string/version_1_0_25_12_2019"
+            android:textSize="12sp" />
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="187dp"
-        android:layout_height="148dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginLeft="112dp"
-        android:layout_marginTop="128dp"
-        android:contentDescription="@string/salvasoft_tasky_app"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ticonbig" />
 
     <Button
         android:id="@+id/btnVolver"
@@ -63,9 +86,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="159dp"
         android:layout_marginLeft="159dp"
-        android:layout_marginTop="71dp"
+        android:layout_marginTop="32dp"
         android:onClick="aMenuTareas"
-        android:text="Volver"
+        android:text="@string/volver"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

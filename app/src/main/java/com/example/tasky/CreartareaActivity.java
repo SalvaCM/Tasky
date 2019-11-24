@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,14 +58,9 @@ public class CreartareaActivity extends AppCompatActivity {
             String fecha = etFecha.getText().toString();
             Double precio = Double.parseDouble(etCoste.getText().toString());
             int realizada = 0;
-            ContentValues registro = new ContentValues();
-            registro.put("nombre",nombre);
-            registro.put("descripcion",descripcion);
-            registro.put("prioridad",prioridad);
-            registro.put("fecha",fecha);
-            registro.put("precio",precio);
-            registro.put("realizada",realizada);
-            db.insert("taskytareas", null, registro);
+
+            String query = "INSERT INTO taskytareas (nombre,descripcion,prioridad,fecha,precio,realizada)VALUES ('"+nombre+"', '" + descripcion + "','" + prioridad + "','" +fecha+"','" + precio + "','" + realizada + "')";
+            db.execSQL(query);
             db.close();
             Toast.makeText(this,"Tarea Creada",Toast.LENGTH_SHORT).show();
             etNombre.setText("");

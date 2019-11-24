@@ -44,7 +44,7 @@ public class DescriptareaActivity extends AppCompatActivity {
         etPrioridad = findViewById(R.id.prioridad2);
         etFecha = findViewById(R.id.fecha2);
         etCoste = findViewById(R.id.coste2);
-        cboxRealizada = findViewById(R.id.cboxRealizada);
+        cboxRealizada = (CheckBox)findViewById(R.id.cboxRealizada);
         btnBorrar = findViewById(R.id.btnBorrar);
         btnGuardar = findViewById(R.id.btnGuadar);
         btnModificar = findViewById(R.id.btnModificar);
@@ -146,13 +146,13 @@ public class DescriptareaActivity extends AppCompatActivity {
         etPrioridad.setEnabled(false);
         etFecha.setEnabled(false);
         etCoste.setEnabled(false);
-        cboxRealizada.setEnabled(false);
+
         if (tareaSeleccionada.getRealizada() == 0) {
             cboxRealizada.setChecked(false);
         } else {
             cboxRealizada.setChecked(true);
         }
-
+        cboxRealizada.setEnabled(false);
     }
     public void GuardarMod(View view) {
 
@@ -172,12 +172,12 @@ public class DescriptareaActivity extends AppCompatActivity {
         etPrioridad.setEnabled(false);
         etFecha.setEnabled(false);
         etCoste.setEnabled(false);
-        cboxRealizada.setEnabled(false);
-        if (cboxRealizada.isChecked()) {
-            realizada = 1;
+        if (cboxRealizada.isChecked()==true) {
+           realizada = 1;
         } else {
-            realizada = 0;
+           realizada = 0;
         }
+        cboxRealizada.setEnabled(false);
         AdminSQLite dbHelper = new AdminSQLite(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         if (db != null) {

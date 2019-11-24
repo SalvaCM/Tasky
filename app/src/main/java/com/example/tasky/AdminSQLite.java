@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 public class AdminSQLite extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "taskybd";
+    private static final String DB_NAME = "NewTasky";
     private static final int DB_VERSION = 1;
 
     public AdminSQLite(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
@@ -19,7 +19,7 @@ public class AdminSQLite extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table taskytareas(codigo integer primary key AUTOINCREMENT,nombre text,descripcion text,prioridad text,fecha date,precio real,realizada int)");
+        sqLiteDatabase.execSQL("create table taskytareas(codigo integer primary key AUTOINCREMENT,nombre text,descripcion text,prioridad text,fecha date,precio real,realizada integer)");
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {

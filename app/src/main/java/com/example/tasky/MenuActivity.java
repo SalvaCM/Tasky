@@ -62,8 +62,7 @@ public class MenuActivity extends AppCompatActivity {
         finish();
     }
     public void cargarTareas(View v) {
-        AdminSQLite admin = new AdminSQLite(this,
-                "taskybd", null, 1);
+        AdminSQLite admin = new AdminSQLite(this);
         SQLiteDatabase bd = admin.getWritableDatabase();
         tareas = new ArrayList<Tareas>();
         Cursor fila = bd.rawQuery("SELECT * from taskytareas", null);
